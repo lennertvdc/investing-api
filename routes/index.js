@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const investments = require('./investments.js');
+const investments = require('./investments');
 
 router.use('/investments', investments);
 
