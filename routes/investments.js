@@ -23,7 +23,13 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    res.send(investments);
+    connection.query('select * from investments', function(error, results, fields) {
+        if(error) {
+            res.status(500).send({message: "error occured"});
+        } else {
+            res.status(200).send(results);
+        }
+    });
 });
 
 module.exports = router;
