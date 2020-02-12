@@ -1,10 +1,10 @@
-const routes = require('express').Router();
-const investments = require('./investments');
+const router = require('express').Router();
+const investments = require('./investments.js');
 
-routes.use('/investments', investments);
+router.use('/investments', investments);
 
-routes.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.status(200).json({ message: 'Connected!' });
   });
 
-module.exports = routes;
+module.exports = router;
