@@ -9,7 +9,7 @@ module.exports =  new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
   host: process.env.DB_HOST,
   dialect: 'mysql',
-  operatorsAliases: false,
+  operatorsAliases: 0,
 
   pool: {
     max: 5,
