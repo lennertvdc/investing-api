@@ -3,6 +3,7 @@ const express = require('express');
 const server = express();
 const bodyParser = require('body-parser');
 const routes = require('./routes');
+const db = require('./database');
 
 // Using bodyParser for parsing incoming JSON requests to effective JSON
 server.use(bodyParser.json());
