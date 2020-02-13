@@ -2,11 +2,11 @@ const Sequelize = require('sequelize');
 const db = require('../database');
 
 const Investment = db.define('investment', {
-    updateDate: {
-        type: Sequelize.STRING,
+    updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
         primaryKey: true,
-        field: 'updateDate'
+        field: 'updated_at'
     },
     name: {
         type: Sequelize.STRING,

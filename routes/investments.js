@@ -3,8 +3,8 @@ const Investment = require('../models/Investment');
 
 router.post('/', (req, res) => {
     let errors = [];
-    if (req.body.updateDate == null) {
-        errors.push({ errorMessage: 'UpdateDate required' });
+    if (req.body.updatedAt == null) {
+        errors.push({ errorMessage: 'UpdatedAt required' });
     }
     if (req.body.name == null) {
         errors.push({ errorMessage: 'Name required' });
@@ -18,7 +18,6 @@ router.post('/', (req, res) => {
     } else {
         Investment.create(req.body)
             .then(() => {
-                console.log('investment created');
                 res.sendStatus(201);
             })
             .catch(err => {
@@ -41,7 +40,7 @@ router.get('/', (req, res) => {
 
 router.get('/latest', (req, res) => {
     Investment.findOne({
-        order: [['updateDate', 'DESC']]
+        order: [['updated_at', 'DESC']]
     })
     .then(investment => {
         res.status(200).send(investment);
