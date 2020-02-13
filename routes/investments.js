@@ -41,7 +41,6 @@ router.get('/', (req, res) => {
 
 router.get('/latest', (req, res) => {
     Investment.findOne({
-        limit: 1,
         order: [['updateDate', 'DESC']]
     })
     .then(investment => {
