@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const db = require('../database');
 const Investment = require('../models/Investment');
 
 router.post('/', (req, res) => {
