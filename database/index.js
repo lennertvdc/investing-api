@@ -7,6 +7,8 @@ module.exports =  new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     timestamps: false
   },
 
+  logging: false,
+
   host: process.env.DB_HOST,
   dialect: 'mysql',
   operatorsAliases: 0,

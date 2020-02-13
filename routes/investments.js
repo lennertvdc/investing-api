@@ -40,4 +40,18 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/latest', (req, res) => {
+    Investment.findOne({
+        limit: 1,
+        order: [['updateDate', 'DESC']]
+    })
+    .then(investment => {
+        res.status(200).send(investment);
+    })
+    .catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;
